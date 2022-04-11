@@ -4,6 +4,7 @@ Algoritmo CalculadoraBasica
 	Escribir "[2] Restar";
 	Escribir "[3] Multiplicar";
 	Escribir "[4] Dividir";
+	Escribir "[5] Potencia";
 	Leer solicitud;
 	Segun solicitud Hacer
 		1:
@@ -14,6 +15,8 @@ Algoritmo CalculadoraBasica
 			multiplicar()
 		4:
 			dividir()
+		5:
+			potencia()
 	FinSegun
 FinAlgoritmo
 
@@ -57,6 +60,21 @@ SubProceso dividir()
 	seguir();
 FinSubProceso
 
+SubProceso potencia() 
+	Escribir "Escribe un número como base";
+	Leer base;
+	Escribir "Escribe un número como exponente";
+	Leer exponente;
+	Si expontente = 0 Entonces
+		result<- 1
+	FinSi
+	Si expontente = 1 Entonces
+		result<- base
+	FinSi
+	result<- base^exponente
+	Escribir "El resultdo es " result
+FinSubProceso
+
 SubProceso seguir()
 	Escribir "¿Quieres realizar otra operación?";
 	Leer decision;
@@ -66,6 +84,7 @@ SubProceso seguir()
 		Escribir "[2] Restar";
 		Escribir "[3] Multiplicar";
 		Escribir "[4] Dividir";
+		Escribir "[5] Potencia";
 		Leer opcioncalcu;
 		Segun opcioncalcu Hacer
 			1:
@@ -76,6 +95,8 @@ SubProceso seguir()
 				multiplicar()
 			4:
 				dividir()
+			5:
+				potencia()
 		FinSegun
 	FinSi
 FinSubProceso
