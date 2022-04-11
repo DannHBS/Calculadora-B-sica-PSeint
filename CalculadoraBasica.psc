@@ -24,9 +24,8 @@ SubProceso suma()
 	Leer num2;
 	result<- num1+num2
 	Escribir "El resultado es " result
-	Escribir "¿Quieres realizar otra operación?";
-	Leer decision;
-FinSubAlgoritmo
+	seguir();
+FinSubProceso
 
 SubProceso resta()
 	Escribir "Escribe un número";
@@ -35,9 +34,8 @@ SubProceso resta()
 	Leer num2;
 	result<- num1-num2
 	Escribir "El resultado es " result
-	Escribir "¿Quieres realizar otra operación?";
-	Leer decision;
-FinSubAlgoritmo
+	seguir();
+FinSubProceso
 
 SubProceso multiplicar()
 	Escribir "Escribe un número";
@@ -46,9 +44,8 @@ SubProceso multiplicar()
 	Leer num2;
 	result<- num1*num2
 	Escribir "El resultado es " result
-	Escribir "¿Quieres realizar otra operación?";
-	Leer decision;
-FinSubAlgoritmo
+	seguir();
+FinSubProceso
 
 SubProceso dividir()
 	Escribir "Escribe un número";
@@ -57,6 +54,28 @@ SubProceso dividir()
 	Leer num2;
 	result<- num1/num2
 	Escribir "El resultado es " result
+	seguir();
+FinSubProceso
+
+SubProceso seguir()
 	Escribir "¿Quieres realizar otra operación?";
 	Leer decision;
-FinSubAlgoritmo
+	Si decision = "si" O decision = "SI" O decision = "Si" Entonces
+		Escribir "Escoge una operación ";
+		Escribir "[1] Sumar";
+		Escribir "[2] Restar";
+		Escribir "[3] Multiplicar";
+		Escribir "[4] Dividir";
+		Leer opcioncalcu;
+		Segun opcioncalcu Hacer
+			1:
+				suma()
+			2:
+				resta()
+			3:
+				multiplicar()
+			4:
+				dividir()
+		FinSegun
+	FinSi
+FinSubProceso
